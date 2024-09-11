@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color 0.5s, padding 0.5s;
+    padding: 20px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar ul li a:hover {
+    color: #f0f0f0;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.4s ease; /* Transition for smooth animation */
+    transition-delay: 0.5s; /* Delay of 500ms for transition */
+}
+
+/* Content */
+.content {
+    height: 2000px;
+    background: linear-gradient(to bottom, #f0f0f0, #ddd);
+    padding-top: 100px;
+    text-align: center;
+}
+
+h1 {
+    margin: 100px 0;
+}
+
+/* Mobile Navbar Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 20px 0;
+    }
+
+    .navbar ul.show {
+        display: flex;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 18px;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.open div:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+        transition-delay: 0.3s; /* Additional delay for first line */
+    }
+
+    .hamburger.open div:nth-child(2) {
+        opacity: 0;
+        transition-delay: 0.5s; /* Delay for fading middle line */
+    }
+
+    .hamburger.open div:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+        transition-delay: 0.7s; /* Delay for last line */
+    }
+}
